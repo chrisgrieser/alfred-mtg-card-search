@@ -11,12 +11,12 @@ Search for Magic the Gathering cards via Alfred.
 Search Magic the Gathering cards via the `mtg` keyword.
 - <kbd>⏎</kbd> open the card on Scryfall.
 - <kbd>⌥</kbd><kbd>⏎</kbd> copy the Scryfall URL.
-- <kbd>⌘</kbd><kbd>⏎</kbd> open the card on `cardmarket` or `tcgplayer.`
+- <kbd>⌘</kbd><kbd>⏎</kbd> open the card on `cardmarket` or `tcgplayer`.
 - <kbd>⌃</kbd><kbd>⏎</kbd> copy the card image to the clipboard.
 - <kbd>⌘Y</kbd> Quick Look the card image.
 
 Use the [hotkey](https://www.alfredapp.com/help/workflows/triggers/hotkey/) to
-quickly loop up the card for currently selected text. (This requires the text to
+quickly look up the card for currently selected text. (This requires the text to
 unambiguously match a card.)
 - <kbd>⏎</kbd> open the card on Scryfall.
 - <kbd>→</kbd> and <kbd>←</kbd> to flip between card sides (in case of a
