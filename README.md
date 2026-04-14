@@ -1,11 +1,11 @@
-# Alfred mtg card search
+# Magic the Gathering card search for Alfred <!-- rumdl-disable-line MD063 -->
 ![GitHub downloads](https://img.shields.io/github/downloads/chrisgrieser/alfred-mtg-card-search/total?label=GitHub%20Downloads&style=plastic&logo=github)
 <!-- TODO: insert GALLERY_ID once I get the numbers ![Alfred Gallery downloads](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fchrisgrieser%2F.config%2Frefs%2Fheads%2Fmain%2FAlfred.alfredpreferences%2Falfred-gallery-downloads.yaml&style=plastic&logo=alfred&label=Gallery%20Downloads&color=%235C1F87&query=GALLERY_ID) -->
 ![Latest release](https://img.shields.io/github/v/release/chrisgrieser/alfred-mtg-card-search?label=Latest%20Release&style=plastic)
 
 Search for Magic the Gathering cards via Alfred.
 
-- [ ] Showcase image to be inserted here.
+<img width="70%" alt="mtg search showcase" src="https://github.com/user-attachments/assets/319373b3-1de7-438c-a038-6a45af3a885d" />
 
 ## Usage
 Search Magic the Gathering cards via the `mtg` keyword.
@@ -22,13 +22,15 @@ unambiguously match a card.)
 - <kbd>→</kbd> and <kbd>←</kbd> to flip between card sides (in case of a
   flippable card).
 
-## 
+## Installation
 [➡️ Download the latest release.](https://github.com/chrisgrieser/alfred-mtg-card-search/releases/latest)
 
 ## Preview pane
 It is recommended to use this workflow with
 [AlfredExtraPane](https://github.com/mr-pennyworth/alfred-extra-pane) as this
 provides card image previews.
+
+<img width="80%" alt="mtg search with preview showcase" src="https://github.com/user-attachments/assets/64043243-b7c7-4b57-a247-6a8ce63200ef" />
 
 ## Alternative
 There is a great
