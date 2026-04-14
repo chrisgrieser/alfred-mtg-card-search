@@ -1,0 +1,3 @@
+Scryfall
+flippable
+MtG
