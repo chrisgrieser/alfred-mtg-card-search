@@ -9,10 +9,10 @@ app.includeStandardAdditions = true;
  * @property {string} name
  * @property {string} scryfall_uri
  * @property {string} released_at iso 8601 date
- * @property {string} mana_cost
+ * @property {string} mana_cost e.g. {2}{W}
  * @property {string} type_line instant, sorcery, etc
  * @property {string} oracle_text the card body
- * @property {string} set abbreviation
+ * @property {string} set abbreviated
  * @property {string} set_name full name
  * @property {"common"|"uncommon"|"rare"|"mythic"} rarity
  * @property {("U"|"W"|"B"|"R"|"G")[]?} colors
@@ -23,19 +23,20 @@ app.includeStandardAdditions = true;
  * @property {number?} toughness
  * @property {("paper"|"mtgo"|"arena")[]} games
  * @property {Record<string, "legal"|"not_legal"|"banned">} legalities
- * @property {boolean} gamechanger
+ * @property {boolean} game_changer
  * @property {ScryfallCard[]} card_faces for flippable cards
  */
 
 /** @type {Record<string, string>} */
 const manaEmojiMap = {
 	"{U}": "🔵",
-	"{W}": "🟡", // yellow works on white background and is still associated with white mane
+	"{W}": "🟡", // yellow works on white background and is still associated with white mana
 	"{B}": "⚫",
 	"{R}": "🔴",
 	"{G}": "🟢",
 	"{C}": "💠", // colorless -> diamond mana
 	"{X}": "✖",
+	"{0}": "0️⃣",
 	"{1}": "1️⃣",
 	"{2}": "2️⃣",
 	"{3}": "3️⃣",
@@ -82,7 +83,7 @@ function run(argv) {
 	if (!query) return errorItem("Search for card…", "Supports Scryfall search syntax.");
 	const market = /** @type {"cardmarket"|"tcgplayer"} */ ($.getenv("market"));
 	const showOnlyPaper = $.getenv("only_paper") === "1";
-	const illegalityFormat = $.getenv("illegality_format_1");
+	const formatLegality = $.getenv("format_legality_1");
 
 	// DOCS https://scryfall.com/docs/api/cards/search
 	const apiUrl =
@@ -127,16 +128,17 @@ function run(argv) {
 		const onlyOnline = !card.games.includes("paper");
 		const onlyOnlineIcon = onlyOnline ? "🌐" : "";
 		const legality =
-			illegalityFormat === "none" || card.legalities[illegalityFormat] === "legal" ? "" : "⛔";
-		const gameChanger = card.gamechanger ? "⭐" : "";
+			formatLegality === "none" || card.legalities[formatLegality] === "legal" ? "" : "⛔";
+		const gameChanger =
+			formatLegality === "commander" && card.game_changer ? "【Game Changer】" : "";
 		const flipIcon = card.card_faces ? "🔄" : "";
 
 		const subtitle = [manaCost, type, displayPrice, `${rarity} ${set} (${yearOfRelease})`]
 			.filter(Boolean)
 			.join("      ");
 		const title = [
-			gameChanger,
 			card.name,
+			gameChanger,
 			flipIcon,
 			onlyOnlineIcon,
 			futureIcon || legality, // future cards are always illegal, thus replacing with future icon
