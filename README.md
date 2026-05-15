@@ -13,6 +13,7 @@ Search Magic the Gathering cards via the `mtg` keyword.
 - <kbd>⌥</kbd><kbd>⏎</kbd> copy the Scryfall URL.
 - <kbd>⌘</kbd><kbd>⏎</kbd> open the card on `cardmarket` or `tcgplayer`.
 - <kbd>⌃</kbd><kbd>⏎</kbd> copy the card image to the clipboard.
+- <kbd>⇧</kbd><kbd>⏎</kbd> copy the card name in square brackets.
 - <kbd>⌘Y</kbd> Quick Look the card image.
 
 Use the [hotkey](https://www.alfredapp.com/help/workflows/triggers/hotkey/) to
